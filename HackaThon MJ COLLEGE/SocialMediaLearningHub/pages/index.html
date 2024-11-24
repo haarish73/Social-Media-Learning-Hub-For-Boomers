@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connekt - Social Media Hub for Boomers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .coin-notification {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .typing-text {
+            border-right: 3px solid;
+            animation: typing 3.5s steps(30, end), blink .75s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: white; }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+    </style>
+</head>
+<body style=" background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg2.jpg');">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light py-4">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white fs-2" href="index.html">Connekt</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white fs-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-3" href="explore.html">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-3" href="community.html">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-3" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white active fs-3" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Coin Notification -->
+    <div id="coinNotification" class="coin-notification d-none">
+        <div class="toast show bg-warning">
+            <div class="toast-header">
+                <strong class="me-auto"><i class="fas fa-coins"></i> Daily Reward!</strong>
+                <button type="button" class="btn-close" onclick="hideCoinNotification()"></button>
+            </div>
+            <div class="toast-body">
+                You've earned 1 coin today!
+                <br>
+                Total coins: <span id="coinCount">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 mb-4 typing-text">Welcome to Connekt</h1>
+                    <p class="lead mb-4">Your Social Media Learning Hub For Boomers</p>
+                    <a href="#" class="btn btn-primary btn-lg">Start Learning</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/SocialMediaLearningHub/assets/images/avatars/logo.jpg" alt="Hero Image" class="img-fluid rounded floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Blogs Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Latest Blog Posts</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card blog-card h-100">
+                        <img src="/SocialMediaLearningHub/assets/images/tutorials/getting-start-wit.jpg" class="card-img-top" alt="Blog 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Getting Started with Facebook</h5>
+                            <p class="card-text">Learn the basics of Facebook and how to connect with friends and family safely.</p>
+                            <a href="/SocialMediaLearningHub/components/getting-facebook.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card blog-card h-100">
+                        <img src="/SocialMediaLearningHub/assets/images/tutorials/privacy-step.jpg" class="card-img-top" alt="Blog 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Privacy Tips for Social Media</h5>
+                            <p class="card-text">Essential privacy settings and best practices to keep your information secure.</p>
+                            <a href="/SocialMediaLearningHub/components/privacy.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card blog-card h-100">
+                        <img src="/SocialMediaLearningHub/assets/images/tutorials/sharing-photos-videos.jpg" class="card-img-top" alt="Blog 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sharing Photos and Videos</h5>
+                            <p class="card-text">Step-by-step guide to sharing memories with friends and family online.</p>
+                            <a href="/SocialMediaLearningHub/components/sharing-photos.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4 text-light">Featured Activities</h2>
+        <div class="row text-center">
+          <!-- Interactive Tutorials Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img src="tutorials.jpg" class="card-img-top" alt="Interactive Tutorials">
+              <div class="card-body">
+                <h5 class="card-title">Interactive Tutorials</h5>
+                <p class="card-text">Learn step-by-step how to create profiles, post updates, and navigate social media platforms.</p>
+                <a href="/SocialMediaLearningHub/components/interactive-tut.html" class="btn btn-primary">Explore</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Safety Workshops Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img src="safety.jpg" class="card-img-top" alt="Safety Workshops">
+              <div class="card-body">
+                <h5 class="card-title">Safety Workshops</h5>
+                <p class="card-text">Understand privacy settings and online safety tips to stay secure on social media.</p>
+                <a href="/SocialMediaLearningHub/components/safety.html" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Profile Building Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img src="OIP.jpeg" class="card-img-top" alt="Profile Building">
+              <div class="card-body">
+                <h5 class="card-title">Profile Building</h5>
+                <p class="card-text">Create professional and appealing social media profiles with hands-on exercises.</p>
+                <a href="/SocialMediaLearningHub/components/profile-building.html" class="btn btn-primary">Start Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Connekt</h5>
+                    <p>Helping seniors navigate the digital world with confidence.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">About Us</a></li>
+                        <li><a href="#" class="text-light">Contact</a></li>
+                        <li><a href="#" class="text-light">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Daily Coin System
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("Initializing Daily Coin System...");
+            checkDailyCoin();
+        });
+
+        function checkDailyCoin() {
+            const lastClaimed = localStorage.getItem('lastClaimed');
+            const today = new Date().toDateString();
+            let coins = parseInt(localStorage.getItem('coins')) || 0;
+
+            console.log("Last claimed:", lastClaimed);
+            console.log("Today's date:", today);
+
+            if (lastClaimed !== today) {
+                localStorage.setItem('lastClaimed', today);
+                coins += 1;
+                localStorage.setItem('coins', coins);
+                showCoinNotification(coins);
+            }
+
+            updateCoinCount(coins);
+        }
+
+        function showCoinNotification(coins) {
+            const notification = document.getElementById('coinNotification');
+            document.getElementById('coinCount').textContent = coins;
+            notification.classList.remove('d-none');
+            setTimeout(() => {
+                notification.classList.add('d-none');
+            }, 5000); // Hide after 5 seconds
+        }
+
+        function updateCoinCount(coins) {
+            const coinCount = document.getElementById('coinCount');
+            if (coinCount) {
+                coinCount.textContent = coins;
+            }
+        }
+
+        function hideCoinNotification() {
+            const notification = document.getElementById('coinNotification');
+            notification.classList.add('d-none');
+        }
+    </script>
+</body>
+</html>

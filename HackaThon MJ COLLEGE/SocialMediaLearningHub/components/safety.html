@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Safety Workshop</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .hero-section {
+            background-color: #28a745;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #28a745;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-header {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .register-form input, .register-form textarea {
+            border-radius: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        .footer p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Safety Workshop</h1>
+        <p>Join our workshop to learn essential safety practices and tips!</p>
+    </div>
+
+    <!-- Workshop Details Section -->
+    <div class="container">
+        <div class="section">
+            <h2 class="section-title text-center">Workshop Overview</h2>
+            <p class="text-center">Our Safety Workshop covers the importance of personal safety, workplace safety, and emergency procedures. Experts will guide you through various scenarios and provide practical tips to stay safe in different environments.</p>
+        </div>
+
+        <!-- Schedule Section -->
+        <div class="section">
+            <h2 class="section-title text-center">Workshop Schedule</h2>
+            <div class="row">
+                <!-- Session 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Session 1: Personal Safety</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Learn about personal safety practices, including self-defense techniques and safety awareness.</p>
+                            <p><strong>Time:</strong> 10:00 AM - 11:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Session 2: Workplace Safety</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Understand workplace hazards and how to minimize risks in a work environment.</p>
+                            <p><strong>Time:</strong> 11:30 AM - 12:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Session 3: Emergency Procedures</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Learn the key steps to take in an emergency situation, including evacuation and first aid.</p>
+                            <p><strong>Time:</strong> 1:00 PM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Safety Tips Section -->
+        <div class="section">
+            <h2 class="section-title text-center">Safety Tips</h2>
+            <ul>
+                <li>Always stay aware of your surroundings.</li>
+                <li>Practice emergency drills regularly.</li>
+                <li>Keep first aid kits accessible and up to date.</li>
+                <li>Know how to report hazards or unsafe conditions.</li>
+                <li>Follow safety guidelines provided by experts or authorities.</li>
+            </ul>
+        </div>
+
+        <!-- Registration Form Section -->
+        <div class="section">
+            <h2 class="section-title text-center">Register for the Workshop</h2>
+            <form class="register-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message (Optional)</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Register Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Safety Workshop. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

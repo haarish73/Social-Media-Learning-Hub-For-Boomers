@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn More - Social Media Hub for Boomers</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .slide-up {
+      transform: translateY(30px);
+      opacity: 0;
+      animation: slideUp 1s forwards;
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hover-effect:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary animate__animated animate__fadeIn">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="index.html">Social Media Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-4 animate__animated animate__fadeIn">Learn More About Instagram</h1>
+
+    <!-- Tabs for Learning Levels -->
+    <ul class="nav nav-tabs" id="learningLevelsTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="beginner-tab" data-bs-toggle="tab" href="#beginner" role="tab"
+          aria-controls="beginner" aria-selected="true">Beginner</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="intermediate-tab" data-bs-toggle="tab" href="#intermediate" role="tab"
+          aria-controls="intermediate" aria-selected="false">Intermediate</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="advanced-tab" data-bs-toggle="tab" href="#advanced" role="tab"
+          aria-controls="advanced" aria-selected="false">Advanced</a>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content mt-4" id="learningLevelsTabContent">
+      <!-- Beginner Tab -->
+      <div class="tab-pane fade show active" id="beginner" role="tabpanel" aria-labelledby="beginner-tab">
+        <section id="beginner-content" class="fade-in">
+          <h3>Getting Started with Instagram</h3>
+          <p>Follow these steps to start using Instagram:</p>
+          <ol>
+            <li>Download the Instagram app from your app store.</li>
+            <li>Sign up with your email or phone number.</li>
+            <li>Create a username and password.</li>
+            <li>Set up your profile by adding a photo and bio.</li>
+            <li>Follow people and explore content!</li>
+          </ol>
+        </section>
+      </div>
+
+      <!-- Intermediate Tab -->
+      <div class="tab-pane fade" id="intermediate" role="tabpanel" aria-labelledby="intermediate-tab">
+        <section id="intermediate-content" class="fade-in">
+          <h3>Intermediate Instagram Features</h3>
+          <p>Take your Instagram experience to the next level with these features:</p>
+          <ul>
+            <li><strong>Stories:</strong> Share photos and videos that disappear after 24 hours.</li>
+            <li><strong>Reels:</strong> Create and explore short, engaging videos.</li>
+            <li><strong>Hashtags:</strong> Use hashtags to reach a wider audience.</li>
+            <li><strong>Direct Messaging:</strong> Connect privately with friends and followers.</li>
+            <li><strong>Explore Page:</strong> Discover new content tailored to your interests.</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Advanced Tab -->
+      <div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+        <section id="advanced-content" class="fade-in">
+          <h3>Advanced Instagram Techniques</h3>
+          <p>Learn how to become a pro at using Instagram:</p>
+          <ul>
+            <li><strong>Analytics:</strong> Use Instagram Insights to track engagement and reach.</li>
+            <li><strong>Content Strategy:</strong> Plan your posts and schedule them for better reach.</li>
+            <li><strong>Collaboration:</strong> Partner with brands or influencers for collaborations.</li>
+            <li><strong>Instagram Ads:</strong> Promote your content to a wider audience.</li>
+            <li><strong>Advanced Editing:</strong> Use Instagram’s in-app editing tools to enhance your photos and videos.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2024 Social Media Learning Hub for Boomers | All Rights Reserved</p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

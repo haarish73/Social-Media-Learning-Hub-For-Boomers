@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url(bg2.jpg);
+      background-size: cover;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid #0d6efd;
+    }
+    .edit-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: rgba(0,0,0,0.5);
+      padding: 5px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar remains the same -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary py-4">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fs-2" href="index.html">Connekt</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white fs-3" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-3" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-3" href="community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-3" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link text-white fs-3" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-3" href="#" onclick="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 text-light">Your Profile</h2>
+      <div class="row justify-content-center">
+        <!-- Profile Card -->
+        <div class="col-md-6">
+          <div class="card shadow-lg">
+            <div class="card-body text-center">
+              <div class="position-relative d-inline-block">
+                <img id="profileImage" class="profile-img rounded-circle mb-3" alt="Profile Picture">
+                <label for="imageInput" class="edit-overlay">
+                  <img src="edit-icon.png" width="20" height="20" alt="Edit">
+                </label>
+                <input type="file" id="imageInput" hidden accept="image/*" onchange="handleImageUpload(event)">
+              </div>
+              <h4 class="card-title" id="profileName"></h4>
+              <p class="text-muted" id="profileEmail"></p>
+              <p class="text-muted">Member Since: <span id="joinDate"></span></p>
+              <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                Edit Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rest of your profile sections remain the same -->
+      <div class="row mt-5">
+        <!-- Update Details -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Update Your Details</h5>
+              <p class="card-text">Modify your email, password, and personal information securely.</p>
+              <a href="update-details.html" class="btn btn-primary">Update</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- View Posts -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">View Your Posts</h5>
+              <p class="card-text">See and manage the posts you've shared on the platform.</p>
+              <a href="my-posts.html" class="btn btn-primary">View Posts</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Archived Content -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Archived Content</h5>
+              <p class="card-text">Access the posts or content you have archived.</p>
+              <a href="archived-content.html" class="btn btn-primary">View Archive</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Section: Selling Items and Messages -->
+      <div class="row mt-5">
+        <!-- Sell Item -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Sell an Item</h5>
+              <p class="card-text">Post an item you want to sell. Reach a wide audience on Connekt!</p>
+              <a href="sell-item.html" class="btn btn-primary">Sell Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Messages -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Messages</h5>
+              <p class="card-text">Check your messages and stay connected with others on Connekt.</p>
+              <a href="messages.html" class="btn btn-primary">View Messages</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Seller -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contact Seller</h5>
+              <p class="card-text">Want to buy an item? Contact the seller directly for more details!</p>
+              <a href="contact-seller.html" class="btn btn-primary">Contact Seller</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12">
+          <div class="card shadow-lg">
+            <div class="card-body">
+              <h5 class="card-title text-center">🔥 Your Streaks</h5>
+              <div id="streak-container" class="mt-3 text-center">
+                <!-- Streaks will be dynamically populated here -->
+                <p class="text-primary fs-5">Loading streaks...</p>
+              </div>
+              <button class="btn btn-primary mt-3" onclick="resetStreak()">Reset Streak</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2024 Social Media Hub | All Rights Reserved</p>
+  </footer>
+      <!-- ... -->
+    </div>
+  </section>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal fade" id="editProfileModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editProfileForm">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="editName" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="editEmail" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">New Password (leave blank to keep current)</label>
+              <input type="password" class="form-control" id="editPassword">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Bio</label>
+              <textarea class="form-control" id="editBio" rows="3"></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // Check if the user is logged in, if not, redirect to login page
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  if (!currentUser) {
+    window.location.href = 'login.html';  // Redirect to login if no user is logged in
+    return;
+  }
+
+  // Display user information
+  displayUserProfile(currentUser);
+
+  // Set up form submission for profile update
+  document.getElementById('editProfileForm').addEventListener('submit', handleProfileUpdate);
+});
+
+function displayUserProfile(user) {
+  // Display the user's profile information on the profile page
+  document.getElementById('profileName').textContent = user.name;
+  document.getElementById('profileEmail').textContent = user.email;
+  document.getElementById('joinDate').textContent = new Date(user.joinDate).toLocaleDateString();
+  document.getElementById('profileImage').src = user.profilePicture || 'default-profile.jpg'; // Default image if no profile pic
+
+  // Pre-fill the profile edit form with current user data
+  document.getElementById('editName').value = user.name;
+  document.getElementById('editEmail').value = user.email;
+  document.getElementById('editBio').value = user.bio || '';
+}
+
+function handleProfileUpdate(event) {
+  event.preventDefault();  // Prevent the form from submitting in the usual way
+
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const users = JSON.parse(localStorage.getItem('users'));
+
+  // Collect updated data from the form
+  const updatedUser = {
+    ...currentUser,
+    name: document.getElementById('editName').value,
+    email: document.getElementById('editEmail').value,
+    bio: document.getElementById('editBio').value
+  };
+
+  // Update password if provided
+  const newPassword = document.getElementById('editPassword').value;
+  if (newPassword) {
+    updatedUser.password = newPassword;
+  }
+
+  // Update the user information in the users array
+  const userIndex = users.findIndex(u => u.email === currentUser.email);
+  users[userIndex] = updatedUser;
+
+  // Save the updated users array and currentUser to localStorage
+  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+
+  // Update the UI with the new data
+  displayUserProfile(updatedUser);
+
+  // Close the modal after successful update
+  const modal = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
+  modal.hide();
+
+  // Display success message
+  alert('Profile updated successfully!');
+}
+
+function handleImageUpload(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const users = JSON.parse(localStorage.getItem('users'));
+
+      // Update profile picture
+      currentUser.profilePicture = e.target.result;
+
+      // Update the users array with the new profile picture
+      const userIndex = users.findIndex(u => u.email === currentUser.email);
+      users[userIndex] = currentUser;
+
+      // Save the updated user and users array to localStorage
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+      // Update the profile image display
+      document.getElementById('profileImage').src = e.target.result;
+
+      // Alert the user about the successful image update
+      alert('Profile picture updated successfully!');
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+function logout() {
+  // Clear the current user from localStorage and redirect to login page
+  localStorage.removeItem('currentUser');
+  window.location.href = 'login.html';
+}
+
+// Reset streak function (just for demonstration, you can modify it)
+function resetStreak() {
+  alert('Your streak has been reset!');
+  // You can add logic here to actually reset the streak data
+}
+  </script>
+</body>
+</html>
