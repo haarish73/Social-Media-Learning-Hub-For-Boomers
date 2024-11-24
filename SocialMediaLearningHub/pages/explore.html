@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connekt - Social Media Learning Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url(bg2.jpg);
+      background-size: cover;
+    }
+
+    .tutorial-card {
+      transition: transform 0.3s ease;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .tutorial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .progress-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1;
+    }
+
+    .step-card {
+      border-left: 4px solid #0d6efd;
+      margin-bottom: 1rem;
+    }
+
+    .completed-step {
+      background-color: #e8f5e9;
+      border-left-color: #28a745;
+    }
+
+    .platform-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .difficulty-beginner {
+      color: #28a745;
+    }
+
+    .difficulty-intermediate {
+      color: #ffc107;
+    }
+
+    .difficulty-advanced {
+      color: #dc3545;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar (same as your existing one) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary py-4">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fs-2" href="index.html">Connekt</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white fs-2" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-2" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-2" href="community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-2" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-2" href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <!-- Welcome Section -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card bg-primary text-white">
+          <div class="card-body p-4">
+            <h2>Welcome to Your Social Media Learning Journey!</h2>
+            <p class="fs-5 mb-0">Choose from our step-by-step tutorials designed specifically for beginners. Track your
+              progress and learn at your own pace.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="searchTutorials" placeholder="Search tutorials...">
+      </div>
+      <div class="col-md-3">
+        <select class="form-select" id="filterDifficulty">
+          <option value="">All Difficulties</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-select" id="filterPlatform">
+          <option value="">All Platforms</option>
+          <option value="facebook">Facebook</option>
+          <option value="instagram">Instagram</option>
+          <option value="amazon">Amazon</option>
+          <option value="whatsapp">WhatsApp</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tutorials Grid -->
+    <div class="row" id="tutorialsGrid">
+      <!-- Facebook Tutorial -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card tutorial-card h-100">
+          <span class="badge bg-success progress-badge">Progress: 0%</span>
+          <img src="/SocialMediaLearningHub/assets/images/avatars/facebook.webp" class="card-img-top"
+            alt="Facebook Tutorial">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/SocialMediaLearningHub/assets/images/avatars/facebook.webp" class="platform-icon"
+                alt="Facebook">
+              <h5 class="card-title mb-0">Facebook Basics</h5>
+            </div>
+            <p class="card-text">Learn how to create an account, connect with friends, share photos, and stay safe on
+              Facebook.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-light text-dark">10 lessons</span>
+              <span class="difficulty-beginner">Beginner Friendly</span>
+            </div>
+            <button class="btn btn-primary w-100 mt-3" onclick="startTutorial('facebook-basics')">Start
+              Learning</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram Tutorial -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card tutorial-card h-100">
+          <span class="badge bg-success progress-badge">Progress: 0%</span>
+          <img src="instagram.jpg" class="card-img-top" alt="Instagram Tutorial">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="instagram.jpg" class="platform-icon" alt="Instagram">
+              <h5 class="card-title mb-0">Instagram Guide</h5>
+            </div>
+            <p class="card-text">Master Instagram: from installation to sharing stories and connecting with family.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-light text-dark">8 lessons</span>
+              <span class="difficulty-beginner">Beginner Friendly</span>
+            </div>
+            <button class="btn btn-primary w-100 mt-3" onclick="startTutorial('instagram-guide')">Start
+              Learning</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amazon Shopping -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card tutorial-card h-100">
+          <span class="badge bg-success progress-badge">Progress: 0%</span>
+          <img src="amazon-4k-logo-qhd.jpg" class="card-img-top" alt="Amazon Tutorial">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="amazon-4k-logo-qhd.jpg" class="platform-icon" alt="Amazon">
+              <h5 class="card-title mb-0">Amazon Shopping</h5>
+            </div>
+            <p class="card-text">Learn to shop safely on Amazon: account creation, finding deals, and secure checkout.
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-light text-dark">12 lessons</span>
+              <span class="difficulty-beginner">Beginner Friendly</span>
+            </div>
+            <button class="btn btn-primary w-100 mt-3" onclick="startTutorial('amazon-shopping')">Start
+              Learning</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tutorial Modal -->
+  <div class="modal fade" id="tutorialModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tutorialTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="tutorialSteps"></div>
+          <div class="progress mt-4">
+            <div class="progress-bar" id="tutorialProgress" role="progressbar"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save & Exit</button>
+          <button type="button" class="btn btn-primary" id="nextStepBtn">Next Step</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    // Tutorial data
+    const tutorials = {
+      'facebook-basics': {
+        title: 'Facebook Basics',
+        steps: [
+          {
+            title: 'Installing Facebook',
+            content: `
+                            <h6>Let's install Facebook on your device:</h6>
+                            <ol>
+                                <li>Open your device's app store (Play Store for Android or App Store for iPhone)</li>
+                                <li>Type "Facebook" in the search bar</li>
+                                <li>Click the "Install" or "Get" button</li>
+                                <li>Wait for the download to complete</li>
+                            </ol>
+                            <div class="alert alert-info">
+                                <strong>Tip:</strong> Make sure you're connected to Wi-Fi to save data!
+                            </div>
+                        `
+          },
+          {
+            title: 'Creating Your Account',
+            content: `
+                            <h6>Setting up your Facebook account:</h6>
+                            <ol>
+                                <li>Open the Facebook app</li>
+                                <li>Click "Create New Account"</li>
+                                <li>Enter your name, email or phone number</li>
+                                <li>Choose a strong password</li>
+                                <li>Add your birthday and gender</li>
+                            </ol>
+                            <div class="alert alert-warning">
+                                <strong>Safety Tip:</strong> Use a unique password you haven't used elsewhere!
+                            </div>
+                        `
+          },
+          // Add more steps...
+        ]
+      },
+      'instagram-guide': {
+        title: 'Instagram Guide',
+        steps: [
+          {
+            title: 'Getting Started with Instagram',
+            content: `
+                            <h6>Installing Instagram:</h6>
+                            <ol>
+                                <li>Open your device's app store</li>
+                                <li>Search for "Instagram"</li>
+                                <li>Click Install</li>
+                                <li>Open the app once installed</li>
+                            </ol>
+                            <div class="alert alert-info">
+                                <strong>Note:</strong> Instagram is free to download and use!
+                            </div>
+                        `
+          },
+          // Add more steps...
+        ]
+      },
+      // Add more tutorials...
+    };
+
+    let currentTutorial = null;
+    let currentStep = 0;
+
+    function startTutorial(tutorialId) {
+      currentTutorial = tutorials[tutorialId];
+      currentStep = 0;
+      updateTutorialModal();
+      new bootstrap.Modal(document.getElementById('tutorialModal')).show();
+    }
+
+    function updateTutorialModal() {
+      const modal = document.getElementById('tutorialModal');
+      const title = document.getElementById('tutorialTitle');
+      const steps = document.getElementById('tutorialSteps');
+      const progress = document.getElementById('tutorialProgress');
+
+      title.textContent = currentTutorial.title;
+      steps.innerHTML = currentTutorial.steps[currentStep].content;
+
+      const progressPercent = ((currentStep + 1) / currentTutorial.steps.length) * 100;
+      progress.style.width = ${ progressPercent }%;
+      progress.textContent = ${ Math.round(progressPercent) }%;
+
+      // Save progress
+      saveProgress(currentTutorial.title, progressPercent);
+    }
+
+    function saveProgress(tutorialName, progress) {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (!currentUser) return;
+
+      currentUser.tutorials = currentUser.tutorials || {};
+      currentUser.tutorials[tutorialName] = progress;
+
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    }
+
+    document.getElementById('nextStepBtn').addEventListener('click', () => {
+      if (currentStep < currentTutorial.steps.length - 1) {
+        currentStep++;
+        updateTutorialModal();
+      }
+    });
+
+    // Search and filter functionality
+    document.getElementById('searchTutorials').addEventListener('input', filterTutorials);
+    document.getElementById('filterDifficulty').addEventListener('change', filterTutorials);
+    document.getElementById('filterPlatform').addEventListener('change', filterTutorials);
+
+    function filterTutorials() {
+      const search = document.getElementById('searchTutorials').value.toLowerCase();
+      const difficulty = document.getElementById('filterDifficulty').value;
+      const platform = document.getElementById('filterPlatform').value;
+
+      // Implement filtering logic here...
+    }
+  </script>
+</body>
+
+</html>

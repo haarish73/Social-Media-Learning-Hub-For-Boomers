@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn More - Social Media Hub for Boomers</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .slide-up {
+      transform: translateY(30px);
+      opacity: 0;
+      animation: slideUp 1s forwards;
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hover-effect:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary animate__animated animate__fadeIn">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="index.html">Social Media Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-4 animate__animated animate__fadeIn">Learn More About Facebook</h1>
+
+    <!-- Tabs for Learning Levels -->
+    <ul class="nav nav-tabs" id="learningLevelsTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="beginner-tab" data-bs-toggle="tab" href="#beginner" role="tab"
+          aria-controls="beginner" aria-selected="true">Beginner</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="intermediate-tab" data-bs-toggle="tab" href="#intermediate" role="tab"
+          aria-controls="intermediate" aria-selected="false">Intermediate</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="advanced-tab" data-bs-toggle="tab" href="#advanced" role="tab"
+          aria-controls="advanced" aria-selected="false">Advanced</a>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content mt-4" id="learningLevelsTabContent">
+      <!-- Beginner Tab -->
+      <div class="tab-pane fade show active" id="beginner" role="tabpanel" aria-labelledby="beginner-tab">
+        <section id="beginner-content" class="fade-in">
+          <h3>Getting Started with Facebook</h3>
+          <p>Facebook is easy to use, and we’ll help you get started. Follow these simple steps:</p>
+          <ol>
+            <li>Go to Facebook's website.</li>
+            <li>Click the "Create New Account" button.</li>
+            <li>Fill in your details and sign up.</li>
+            <li>Set up your profile with a photo.</li>
+            <li>Connect with friends and explore the platform!</li>
+          </ol>
+        </section>
+      </div>
+
+      <!-- Intermediate Tab -->
+      <div class="tab-pane fade" id="intermediate" role="tabpanel" aria-labelledby="intermediate-tab">
+        <section id="intermediate-content" class="fade-in">
+          <h3>Intermediate Facebook Features</h3>
+          <p>Now that you're familiar with the basics, let’s dive deeper into Facebook's features:</p>
+          <ul>
+            <li><strong>Groups:</strong> Join or create groups for specific interests.</li>
+            <li><strong>Pages:</strong> Follow public figures, businesses, or brands.</li>
+            <li><strong>Events:</strong> Discover local events and RSVP to them.</li>
+            <li><strong>Marketplace:</strong> Buy and sell items locally.</li>
+            <li><strong>Sharing Content:</strong> Share articles, videos, and more with your friends.</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Advanced Tab -->
+      <div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+        <section id="advanced-content" class="fade-in">
+          <h3>Advanced Facebook Techniques</h3>
+          <p>If you are an advanced user, here are some powerful Facebook tools:</p>
+          <ul>
+            <li><strong>Facebook Ads:</strong> Learn how to create and manage ads to promote your business.</li>
+            <li><strong>Facebook Analytics:</strong> Use insights and data to track your Facebook page’s performance.</li>
+            <li><strong>Advanced Privacy Settings:</strong> Control who can see your posts, photos, and personal information.</li>
+            <li><strong>Automation with Bots:</strong> Set up chatbots to interact with followers on your Facebook Page.</li>
+            <li><strong>Integrating with Third-Party Apps:</strong> Connect Facebook with external applications to extend its functionality.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <!-- <p>&copy; 2024 Social Media Learning Hub for Boomers | All Rights Reserved</p> -->
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
